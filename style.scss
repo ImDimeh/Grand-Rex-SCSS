@@ -9,15 +9,18 @@ $header-background: #24252a;
   margin: 0;
   padding: 0;
 }
+
+// NAV BAR
 header {
   @include mixin.flex-navbar(space-around);
   background-color: $header-background;
+  top: 0;
 }
 .logo {
   cursor: pointer;
   img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 }
 .nav__links {
@@ -103,6 +106,27 @@ header {
 .overlay--active {
   width: 100%;
 }
+
+// SECTION HOME
+
+section.home {
+  @include mixin.sectionBackgroundImage(
+    "https://www.pariszigzag.fr/wp-content/uploads/2020/07/le-grand-rex-paris-zigazg.png"
+  );
+  color: whitesmoke;
+  text-align: center;
+  h1 {
+    margin: 10%;
+
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+    margin: 1em;
+  }
+}
+// RESPONSIVE
+
 @media screen and (max-height: 450px) {
   .overlay {
     a {

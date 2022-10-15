@@ -1,6 +1,15 @@
 @mixin flex-navbar($justify) {
   display: flex;
+  position: sticky;
   justify-content: $justify;
   align-items: center;
   padding: 30px 10%;
+}
+
+@mixin sectionBackgroundImage($url) {
+  height: 100vh;
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 4px solid red;
 }
