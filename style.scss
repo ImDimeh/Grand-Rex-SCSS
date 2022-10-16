@@ -272,6 +272,20 @@ section.infos {
     }
   }
 }
+.plusLoin {
+  @include mixin.flex-navbar(space-around);
+  background-color: $header-background;
+  top: 0;
+  border-bottom: 4px solid #5c322c;
+
+  li {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
 // RESPONSIVE
 
 @media screen and (max-height: 450px) {
