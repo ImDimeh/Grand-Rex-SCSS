@@ -1,0 +1,77 @@
+@use "/mixin";
+// TIMELINE
+
+.container-timeline {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+
+  padding: 3rem 0;
+}
+.wrapper-timeline {
+  background-color: $header-background;
+  padding: 2rem;
+
+  background: rgba(88, 10, 0, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid rgba(88, 10, 0, 0.1);
+}
+h1 {
+  font-size: 1.1rem;
+  font-family: sans-serif;
+  color: black;
+}
+.sessions-timeline {
+  margin-top: 2rem;
+  border-radius: 12px;
+  position: relative;
+}
+li {
+  padding-bottom: 3rem;
+  border-left: 1px solid #abaaed;
+  position: relative;
+  padding-left: 20px;
+  margin-left: 10px;
+  &:last-child {
+    border: 0px;
+    padding-bottom: 0;
+  }
+  &:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 1px solid #4e5ed3;
+    box-shadow: 3px 3px 0px #bab5f8;
+    box-shadow: 3px 3px 0px #bab5f8;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: 15px;
+  }
+}
+.time {
+  color: $time-color;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  @include mobile-and-up {
+    font-size: 0.9rem;
+  }
+  @include mobile-only {
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+  }
+}
+p {
+  color: $time-p-color;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin-top: 0.4rem;
+  @include mobile-only {
+    font-size: 0.9rem;
+  }
+}

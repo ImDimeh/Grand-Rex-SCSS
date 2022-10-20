@@ -1,8 +1,12 @@
 @use "mixin";
-// import
 
-// VAR
-$header-background: #580a00;
+@import "utils/variable";
+@import "layout/Timeline";
+
+// import
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   box-sizing: border-box;
@@ -15,7 +19,7 @@ header {
   @include mixin.flex-navbar(space-around);
   background-color: $header-background;
   top: 0;
-  border-bottom: 4px solid #5c322c;
+  border-bottom: 4px solid $main-brown;
 }
 .logo {
   cursor: pointer;
@@ -49,7 +53,7 @@ header {
   color: #edf0f1;
   text-decoration: none;
   padding: 9px 25px;
-  background-color: #5c322c;
+  background-color: $main-brown;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -202,112 +206,44 @@ section.infos {
     padding: 0;
   }
 
-  .container-timeline {
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
+  // PLUS LOIN
+  .plusLoin {
+    @include mixin.flex-navbar(space-around);
+    background-color: $header-background;
+    top: 0;
+    border-bottom: 4px solid $main-brown;
 
-    padding: 3rem 0;
-  }
-  .wrapper-timeline {
-    background-color: #580a00;
-    padding: 2rem;
-    border-radius: 15px;
-  }
-  h1 {
-    font-size: 1.1rem;
-    font-family: sans-serif;
-    color: black;
-  }
-  .sessions-timeline {
-    margin-top: 2rem;
-    border-radius: 12px;
-    position: relative;
-  }
-  li {
-    padding-bottom: 3rem;
-    border-left: 1px solid #abaaed;
-    position: relative;
-    padding-left: 20px;
-    margin-left: 10px;
-    &:last-child {
-      border: 0px;
-      padding-bottom: 0;
-    }
-    &:before {
-      content: "";
-      width: 15px;
-      height: 15px;
-      background: white;
-      border: 1px solid #4e5ed3;
-      box-shadow: 3px 3px 0px #bab5f8;
-      box-shadow: 3px 3px 0px #bab5f8;
-      border-radius: 50%;
-      position: absolute;
-      left: -10px;
-      top: 15px;
+    li {
+      color: black;
+      font-size: 30px;
+      text-decoration: none;
+      text-align: center;
+      margin-bottom: 50px;
     }
   }
-  .time {
-    color: #a58548;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    @include mobile-and-up {
-      font-size: 0.9rem;
-    }
-    @include mobile-only {
-      margin-bottom: 0.3rem;
-      font-size: 0.85rem;
-    }
-  }
-  p {
-    color: #4f4f4f;
-    font-family: sans-serif;
-    line-height: 1.5;
-    margin-top: 0.4rem;
-    @include mobile-only {
-      font-size: 0.9rem;
-    }
-  }
-}
-.plusLoin {
-  @include mixin.flex-navbar(space-around);
-  background-color: $header-background;
-  top: 0;
-  border-bottom: 4px solid #5c322c;
+  // RESPONSIVE
 
-  li {
-    color: black;
-    font-size: 30px;
-    text-decoration: none;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-}
-// RESPONSIVE
-
-@media screen and (max-height: 450px) {
-  .overlay {
-    a {
-      font-size: 20px;
-    }
-    .close {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
+  @media screen and (max-height: 450px) {
+    .overlay {
+      a {
+        font-size: 20px;
+      }
+      .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
     }
   }
-}
-@media only screen and (max-width: 800px) {
-  .nav__links {
-    display: none;
-  }
-  .cta {
-    display: none;
-  }
-  .menu {
-    display: initial;
+  @media only screen and (max-width: 800px) {
+    .nav__links {
+      display: none;
+    }
+    .cta {
+      display: none;
+    }
+    .menu {
+      display: initial;
+    }
   }
 }
